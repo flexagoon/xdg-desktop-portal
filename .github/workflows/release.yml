@@ -1,0 +1,121 @@
+name: Release new version
+
+on:
+  workflow_dispatch:
+    inputs:
+      preRelease:
+        description: Is the release a pre-release?
+        required: false
+        default: false
+
+jobs:
+  release:
+    name: Build and publish a release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      UBUNTU_VERSION: '22.04'
+      CC: gcc
+      BASE_CFLAGS: -Wp,-D_FORTIFY_SOURCE=2
+      BUILD_CONTAINER: gcc-build-container
+      RUN_CMD: docker exec -t -w /src -e TEST_IN_CI -e ASAN_OPTIONS -e G_MESSAGES_DEBUG -e XDG_DATA_DIRS gcc-build-container
+      AS_USER: runuser -u tester --
+      BUILDDIR: builddir
+    steps:
+      - name: Prepare environment
+        id: env-setup
+        run: |
+          echo "cflags=$BASE_CFLAGS" >> $GITHUB_OUTPUT;
+
+      - name: Prepare container
+        run: |
+          docker run --name $BUILD_CONTAINER \
+          --tty --device /dev/fuse --cap-add SYS_ADMIN \
+          --security-opt apparmor:unconfined \
+          -v $(pwd):/src \
+          -e DEBIAN_FRONTEND \
+          -e DEBCONF_NONINTERACTIVE_SEEN=true \
+          -e TERM=dumb \
+          -e MAKEFLAGS="-j $(getconf _NPROCESSORS_ONLN)" \
+          -e CC -e CFLAGS="${{ steps.env-setup.outputs.cflags }}" \
+          -d ubuntu:$UBUNTU_VERSION sleep infinity
+
+      - name: Install dependencies
+        run: |
+          $RUN_CMD apt-get update --quiet
+          $RUN_CMD apt-get upgrade --quiet -y
+          $RUN_CMD apt-get install --quiet -y --no-install-recommends \
+          gcc \
+          desktop-file-utils \
+          fuse3 \
+          gettext \
+          git \
+          gnome-desktop-testing \
+          gtk-doc-tools \
+          libcap2-bin \
+          libflatpak-dev \
+          libfontconfig1-dev \
+          libfuse3-dev \
+          libgdk-pixbuf-2.0-dev \
+          libgeoclue-2-dev \
+          libglib2.0-dev \
+          libjson-glib-dev \
+          libpipewire-0.3-dev \
+          libportal-dev \
+          libsystemd-dev \
+          libtool \
+          llvm \
+          python3-gi \
+          shared-mime-info
+
+      - name: Install dependencies for meson
+        run: |
+          $RUN_CMD apt-get install --quiet -y --no-install-recommends \
+          meson
+
+      - name: Install dependencies for the pytest test suite
+        run: |
+          $RUN_CMD apt-get install --quiet -y --no-install-recommends \
+          python3-pytest python3-pytest-xdist python3-dbusmock python3-dbus
+
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Setup test user
+        run: |
+          $RUN_CMD adduser --disabled-password --gecos "" tester
+          $RUN_CMD chown tester:tester . -R
+
+      - name: Configure git user
+        run: |
+          $RUN_CMD $AS_USER git config user.name "github-actions[bot]"
+          $RUN_CMD $AS_USER git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          $RUN_CMD $AS_USER git config --global http.sslverify false
+
+      - name: Update translation files
+        run: |
+          $RUN_CMD $AS_USER meson setup . _build
+          $RUN_CMD $AS_USER meson compile -C _build/ xdg-desktop-portal-update-po
+          $RUN_CMD $AS_USER git add po/*po
+          $RUN_CMD $AS_USER git commit -m "Update po files"
+          $RUN_CMD $AS_USER git push
+          $RUN_CMD $AS_USER git clean -fxd
+
+      - name: Build xdg-desktop-portal
+        run: |
+          $RUN_CMD $AS_USER meson setup . _build
+          $RUN_CMD $AS_USER meson dist -C _build
+
+      - name: Tag release
+        run: |
+          $RUN_CMD $AS_USER git tag test
+          $RUN_CMD $AS_USER git push --tags
+
+      - name: Create release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          name: Test
+          prerelease: ${{ github.event.inputs.preRelease }}
+          files: _build/meson-dist/*
+          tag_name: test
