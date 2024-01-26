@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 11:13-0300\n"
+"POT-Creation-Date: 2024-01-26 12:05+0000\n"
 "PO-Revision-Date: 2023-06-06 02:05+0300\n"
 "Last-Translator: Berk Elyesa Yıldırım <beryesa@proton.me>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -22,22 +22,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: src/background.c:745
+#: src/background.c:747
 #, c-format
 msgid "Allow %s to run in the background?"
 msgstr "%s, arka planda çalışmasına izin verilsin mi?"
 
-#: src/background.c:749
+#: src/background.c:751
 #, c-format
 msgid "%s requests to be started automatically and run in the background."
 msgstr "%s, kendiliğinden başlamayı ve arka planda çalışmayı istiyor."
 
-#: src/background.c:751
+#: src/background.c:753
 #, c-format
 msgid "%s requests to run in the background."
 msgstr "%s, arka planda çalışmak istiyor."
 
-#: src/background.c:752
+#: src/background.c:754
 msgid ""
 "The ‘run in background’ permission can be changed at any time from the "
 "application settings."
@@ -45,107 +45,103 @@ msgstr ""
 "‘Arka planda çalış’ ayarı, uygulama ayarlarından istediğiniz zaman "
 "değiştirilebilir."
 
-#: src/background.c:757
+#: src/background.c:759
 msgid "Don't allow"
 msgstr "İzin verme"
 
-#: src/background.c:758 src/screenshot.c:238 src/wallpaper.c:182
+#: src/background.c:760 src/screenshot.c:238 src/wallpaper.c:183
 msgid "Allow"
 msgstr "İzin ver"
 
-#: src/device.c:116
-msgid "Turn On Microphone?"
-msgstr "Mikrofon Açılsın Mı?"
-
 #: src/device.c:117
-msgid ""
-"Access to your microphone can be changed at any time from the privacy "
-"settings."
-msgstr ""
-"Mikrofonunuza erişimi, istediğiniz zaman gizlilik ayarlarından "
-"değiştirebilirsiniz."
+#, fuzzy, c-format
+msgid "Allow %s to Use the Microphone?"
+msgstr "%s, Arka Planı Belirlemesine İzin Verilsin Mi?"
 
-#: src/device.c:121
-msgid "An application wants to use your microphone."
-msgstr "Bir uygulama, mikrofonunuzu kullanmak istiyor."
-
-#: src/device.c:123
-#, c-format
-msgid "%s wants to use your microphone."
-msgstr "%s, mikrofonunuzu kullanmak istiyor."
-
-#: src/device.c:129
-msgid "Turn On Speakers?"
-msgstr "Hoparlörler Açılsın Mı?"
-
-#: src/device.c:130
-msgid ""
-"Access to your speakers can be changed at any time from the privacy settings."
-msgstr ""
-"Hoparlörlerinize erişimi, istediğiniz zaman gizlilik ayarlarından "
-"değiştirebilirsiniz."
-
-#: src/device.c:134
-msgid "An application wants to play sound."
-msgstr "Bir uygulama, ses çalmak istiyor."
-
-#: src/device.c:136
-#, c-format
-msgid "%s wants to play sound."
-msgstr "%s, ses çalmak istiyor."
-
-#: src/device.c:142
-msgid "Turn On Camera?"
-msgstr "Kamera Açılsın Mı?"
-
-#: src/device.c:143
-msgid ""
-"Access to your camera can be changed at any time from the privacy settings."
-msgstr ""
-"Kameranıza erişimi, istediğiniz zaman gizlilik ayarlarından "
-"değiştirebilirsiniz."
-
-#: src/device.c:147
-msgid "An application wants to use your camera."
-msgstr "Bir uygulama, kameranızı kullanmak istiyor."
-
-#: src/device.c:149
-#, c-format
-msgid "%s wants to use your camera."
+#: src/device.c:118
+#, fuzzy, c-format
+msgid "%s wants to access recording devices."
 msgstr "%s, kameranızı kullanmak istiyor."
 
-#: src/location.c:526
+#: src/device.c:122
+#, fuzzy
+msgid "Allow app to Use the Microphone?"
+msgstr "%s, arka planda çalışmasına izin verilsin mi?"
+
+#: src/device.c:123
+msgid "An app wants to access recording devices."
+msgstr ""
+
+#: src/device.c:132
+#, fuzzy, c-format
+msgid "Allow %s to Use the Speakers?"
+msgstr "%s, Arka Planı Belirlemesine İzin Verilsin Mi?"
+
+#: src/device.c:133
+#, fuzzy, c-format
+msgid "%s wants to access audio devices."
+msgstr "%s, kameranızı kullanmak istiyor."
+
+#: src/device.c:137
+#, fuzzy
+msgid "Allow app to Use the Speakers?"
+msgstr "%s, Arka Planı Belirlemesine İzin Verilsin Mi?"
+
+#: src/device.c:138
+msgid "An app wants to access audio devices."
+msgstr ""
+
+#: src/device.c:147
+#, fuzzy, c-format
+msgid "Allow %s to Use the Camera?"
+msgstr "%s, arka planda çalışmasına izin verilsin mi?"
+
+#: src/device.c:148
+#, fuzzy, c-format
+msgid "%s wants to access camera devices."
+msgstr "%s, kameranızı kullanmak istiyor."
+
+#: src/device.c:152
+msgid "Allow app to Use the Camera?"
+msgstr ""
+
+#: src/device.c:153
+#, fuzzy
+msgid "An app wants to access camera devices."
+msgstr "Bir uygulama, kameranızı kullanmak istiyor."
+
+#: src/location.c:527
 msgid "Deny Access"
 msgstr "Erişimi Reddet"
 
-#: src/location.c:528
+#: src/location.c:529
 msgid "Grant Access"
 msgstr "Erişim İzni Ver"
 
-#: src/location.c:546
+#: src/location.c:551
 #, c-format
 msgid "Give %s Access to Your Location?"
 msgstr "%s, Bulunduğunuz Konuma Erişsin Mi?"
 
-#: src/location.c:551
+#: src/location.c:556
 #, c-format
 msgid "%s wants to use your location."
 msgstr "%s, konumunuzu kullanmak istiyor."
 
-#: src/location.c:559
+#: src/location.c:565
 msgid "Grant Access to Your Location?"
 msgstr "Konumunuza Erişim Verilsin Mi?"
 
-#: src/location.c:560
+#: src/location.c:566
 msgid "An application wants to use your location."
 msgstr "Bir uygulama, konumunuzu kullanmak istiyor."
 
-#: src/location.c:563
+#: src/location.c:569
 msgid "Location access can be changed at any time from the privacy settings."
 msgstr ""
 "Konum erişimini, gizlilik ayarlarından istediğiniz zaman değiştirilebilir."
 
-#: src/screenshot.c:236 src/wallpaper.c:180
+#: src/screenshot.c:236 src/wallpaper.c:181
 msgid "Deny"
 msgstr "Reddet"
 
@@ -167,7 +163,7 @@ msgstr "Uygulamaların Ekran Görüntüsü Almasına İzin Verilsin Mi?"
 msgid "An application wants to be able to take screenshots at any time."
 msgstr "Bir uygulama istediği zaman ekran görüntüsü alabilmek istiyor."
 
-#: src/screenshot.c:269 src/wallpaper.c:213
+#: src/screenshot.c:269 src/wallpaper.c:218
 msgid "This permission can be changed at any time from the privacy settings."
 msgstr "Bu izin, gizlilik ayarlarından istediğiniz zaman değiştirilebilir."
 
@@ -175,20 +171,64 @@ msgstr "Bu izin, gizlilik ayarlarından istediğiniz zaman değiştirilebilir."
 msgid "Requested setting not found"
 msgstr "İstenen ayar bulunamadı"
 
-#: src/wallpaper.c:200
+#: src/wallpaper.c:205
 #, c-format
 msgid "Allow %s to Set Backgrounds?"
 msgstr "%s, Arka Planı Belirlemesine İzin Verilsin Mi?"
 
-#: src/wallpaper.c:201
+#: src/wallpaper.c:206
 #, c-format
 msgid "%s is requesting to be able to change the background image."
 msgstr "%s, arka planı değiştirme yetkisi istiyor."
 
-#: src/wallpaper.c:209
+#: src/wallpaper.c:215
 msgid "Allow Applications to Set Backgrounds?"
 msgstr "Uygulamaların Arka Planı Belirlemesine İzin Verilsin Mi?"
 
-#: src/wallpaper.c:210
+#: src/wallpaper.c:216
 msgid "An application is requesting to be able to change the background image."
 msgstr "Bir uygulama arka planı değiştirme yetkisi istiyor."
+
+#~ msgid "Turn On Microphone?"
+#~ msgstr "Mikrofon Açılsın Mı?"
+
+#~ msgid ""
+#~ "Access to your microphone can be changed at any time from the privacy "
+#~ "settings."
+#~ msgstr ""
+#~ "Mikrofonunuza erişimi, istediğiniz zaman gizlilik ayarlarından "
+#~ "değiştirebilirsiniz."
+
+#~ msgid "An application wants to use your microphone."
+#~ msgstr "Bir uygulama, mikrofonunuzu kullanmak istiyor."
+
+#, c-format
+#~ msgid "%s wants to use your microphone."
+#~ msgstr "%s, mikrofonunuzu kullanmak istiyor."
+
+#~ msgid "Turn On Speakers?"
+#~ msgstr "Hoparlörler Açılsın Mı?"
+
+#~ msgid ""
+#~ "Access to your speakers can be changed at any time from the privacy "
+#~ "settings."
+#~ msgstr ""
+#~ "Hoparlörlerinize erişimi, istediğiniz zaman gizlilik ayarlarından "
+#~ "değiştirebilirsiniz."
+
+#~ msgid "An application wants to play sound."
+#~ msgstr "Bir uygulama, ses çalmak istiyor."
+
+#, c-format
+#~ msgid "%s wants to play sound."
+#~ msgstr "%s, ses çalmak istiyor."
+
+#~ msgid "Turn On Camera?"
+#~ msgstr "Kamera Açılsın Mı?"
+
+#~ msgid ""
+#~ "Access to your camera can be changed at any time from the privacy "
+#~ "settings."
+#~ msgstr ""
+#~ "Kameranıza erişimi, istediğiniz zaman gizlilik ayarlarından "
+#~ "değiştirebilirsiniz."
