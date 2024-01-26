@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal master\n"
-"Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal/issues\n"
-"POT-Creation-Date: 2023-12-22 15:33+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-26 14:21+0000\n"
 "PO-Revision-Date: 2023-12-22 22:18+0300\n"
 "Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 3.4.1\n"
 
 #: src/background.c:747
@@ -28,7 +28,8 @@ msgstr "Разрешить приложению \"%s\" работать в фо�
 #, c-format
 msgid "%s requests to be started automatically and run in the background."
 msgstr ""
-"Приложение \"%s\" запрашивает доступ на автоматический запуск и работу в фоне."
+"Приложение \"%s\" запрашивает доступ на автоматический запуск и работу в "
+"фоне."
 
 #: src/background.c:753
 #, c-format
@@ -37,8 +38,8 @@ msgstr "Приложение \"%s\" запрашивает доступ на р�
 
 #: src/background.c:754
 msgid ""
-"The ‘run in background’ permission can be changed at any time from the application "
-"settings."
+"The ‘run in background’ permission can be changed at any time from the "
+"application settings."
 msgstr ""
 "Разрешение на ‘работу в фоне’ можно изменить в любой момент в настройках "
 "приложения."
@@ -149,7 +150,8 @@ msgstr "Разрешить приложению \"%s\" делать снимки
 #: src/screenshot.c:257
 #, c-format
 msgid "%s wants to be able to take screenshots at any time."
-msgstr "Приложение \"%s\" хочет иметь возможность делать снимки экрана в любое время."
+msgstr ""
+"Приложение \"%s\" хочет иметь возможность делать снимки экрана в любое время."
 
 #: src/screenshot.c:265
 msgid "Allow Applications to Take Screenshots?"
@@ -161,7 +163,8 @@ msgstr "Приложение хочет иметь возможность дел
 
 #: src/screenshot.c:269 src/wallpaper.c:218
 msgid "This permission can be changed at any time from the privacy settings."
-msgstr "Это разрешение можно изменить в любой момент в настройках конфиденциальности."
+msgstr ""
+"Это разрешение можно изменить в любой момент в настройках конфиденциальности."
 
 #: src/settings.c:127 src/settings.c:163
 msgid "Requested setting not found"
@@ -175,7 +178,8 @@ msgstr "Разрешить приложению \"%s\" устанавливат�
 #: src/wallpaper.c:206
 #, c-format
 msgid "%s is requesting to be able to change the background image."
-msgstr "Приложение \"%s\" запрашивает возможность изменения фонового изображения."
+msgstr ""
+"Приложение \"%s\" запрашивает возможность изменения фонового изображения."
 
 #: src/wallpaper.c:215
 msgid "Allow Applications to Set Backgrounds?"
@@ -189,9 +193,11 @@ msgstr "Приложение запрашивает возможность из�
 #~ msgstr "Включить микрофон?"
 
 #~ msgid ""
-#~ "Access to your microphone can be changed at any time from the privacy settings."
+#~ "Access to your microphone can be changed at any time from the privacy "
+#~ "settings."
 #~ msgstr ""
-#~ "Доступ к микрофону можно изменить в любой момент в настройках конфиденциальности."
+#~ "Доступ к микрофону можно изменить в любой момент в настройках "
+#~ "конфиденциальности."
 
 #~ msgid "An application wants to use your microphone."
 #~ msgstr "Приложение хочет использовать микрофон."
@@ -204,9 +210,11 @@ msgstr "Приложение запрашивает возможность из�
 #~ msgstr "Включить динамики?"
 
 #~ msgid ""
-#~ "Access to your speakers can be changed at any time from the privacy settings."
+#~ "Access to your speakers can be changed at any time from the privacy "
+#~ "settings."
 #~ msgstr ""
-#~ "Доступ к динамикам можно изменить в любой момент в настройках конфиденциальности."
+#~ "Доступ к динамикам можно изменить в любой момент в настройках "
+#~ "конфиденциальности."
 
 #~ msgid "An application wants to play sound."
 #~ msgstr "Приложение хочет воспроизвести звук."
@@ -218,6 +226,9 @@ msgstr "Приложение запрашивает возможность из�
 #~ msgid "Turn On Camera?"
 #~ msgstr "Включить камеру?"
 
-#~ msgid "Access to your camera can be changed at any time from the privacy settings."
+#~ msgid ""
+#~ "Access to your camera can be changed at any time from the privacy "
+#~ "settings."
 #~ msgstr ""
-#~ "Доступ к камере можно изменить в любой момент в настройках конфиденциальности."
+#~ "Доступ к камере можно изменить в любой момент в настройках "
+#~ "конфиденциальности."
